@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <style>
+        body{
+            background-image: url('https://images.saatchiart.com/saatchi/117292/art/4408063/3477903-TNNQZMIK-7.jpg');
+
+        }
+        ul.nav {
+            margin:0;
+            padding:0;
+            list-style:none;
+            height:36px; line-height:36px;
+            background: rgb(29, 62, 107); /* you can change the backgorund color here. */
+            font-family:Futura;
+            font-size:13px;
+        }
+        ul.nav li {
+            float:left;
+        }
+        ul.nav a {
+            display:block;
+            padding:0 28px;
+            color:#ccece6;
+            text-decoration:none;
+        }
+
+        .button {
+            background-color: #1d3e6b; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family:Futura, sans-serif;
+            font-size:13px;
+
+        }
+
+        .button1 {
+            background-color: #1d3e6b; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family:Futura, sans-serif;
+            font-size:13px;
+            padding: 10px 25px;
+
+        }
+        table {
+            font-family: Futura, sans-serif;
+            color: #1d3e6b ;
+            margin-left: 300px;
+        }
+        </style>
+</head>
+<body >
+<ul class="nav">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/questionsanswers">Create questionary</a></li>
+    <li><a href="/users">Manage users</a></li>
+    <li><a href="/admin">Admin</a></li>
+</ul>
+<table style="width:100%">
+    <tr>
+        <th>Users</th>
+    </tr>
+    <tr data-th-each="user : ${userList}">
+        <td data-th-text="${user.getEmail()}"></td>
+        <td>
+
+            <form action="/userupdateform">
+                <input type="hidden" th:value="${user.getId()}" name="userId" style="text-align: center"/>
+                <input type="submit" value="update" class = 'button1'/>
+            </form>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

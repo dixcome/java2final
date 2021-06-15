@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul.nav {
+            margin:0;
+            padding:0;
+            list-style:none;
+            height:36px; line-height:36px;
+            background: rgb(29, 62, 107); /* you can change the backgorund color here. */
+            font-family:Futura;
+            font-size:13px;
+        }
+        ul.nav li {
+            float:left;
+        }
+        ul.nav a {
+            display:block;
+            padding:0 28px;
+            color:#ccece6;
+            text-decoration:none;
+        }
+
+        .button {
+            background-color: #1d3e6b; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family:Futura, sans-serif;
+            font-size:13px;
+
+        }
+
+        .button1 {
+            background-color: #1d3e6b; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family:Futura, sans-serif;
+            font-size:13px;
+            padding: 10px 25px;
+
+        }
+        table {
+            font-family: Futura, sans-serif;
+            color: #1d3e6b ;
+        }
+
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #e7e7e7;
+            background-color: #f3f3f3;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #666;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+
+
+        li a.active {
+            color: white;
+            background-color: #1d3e6b;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #1d3e6b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/questionsanswers">Create questionary</a></li>
+    <li><a href="/users">Manage users</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/questionadd">Add question</a></li>
+    <li><a href="/answerassignform">Add answer to question</a></li>
+    <li><a href="/answers">Available answers</a></li>
+    <li><a href="/answeradd">Create new answer</a></li>
+</ul>
+<table style="width:100% ">
+    <tr>
+        <th>Answers</th>
+        <th> </th>
+    </tr>
+    <tr data-th-each="answer : ${answerList}">
+        <td data-th-text="${answer.getText()}"></td>
+        <td>
+            <form action="/answerdelete">
+                <input type="hidden" th:value="${answer.getId()}" name="answerId"/>
+                <input type="submit" value="delete" class="button1"/>
+            </form>
+
+            <br>
+
+            <form action="/answerupdateform">
+                <input type="hidden" th:value="${answer.getId()}" name="answerId"/>
+                <input type="submit" value="update" class="button1"/>
+            </form>
+
+        </td>
+    </tr>
+</table>
+
+</br>
+
+
+
+
+</body>
+</html>

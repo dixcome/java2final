@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Home page</title>
+    <style>
+        ul.nav {
+            margin:0;
+            padding:0;
+            list-style:none;
+            height:36px; line-height:36px;
+            background: rgb(29, 62, 107); /* you can change the backgorund color here. */
+            font-family:Futura;
+            font-size:13px;
+        }
+        ul.nav li {
+            float:left;
+        }
+        ul.nav a {
+            display:block;
+            padding:0 28px;
+            color:#ccece6;
+            text-decoration:none;
+        }
+
+        .button {
+            background-color: #1d3e6b; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family:Futura, sans-serif;
+            font-size:13px;
+
+        }
+
+        .button1 {
+            background-color: #1d3e6b; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family:Futura, sans-serif;
+            font-size:13px;
+            padding: 10px 25px;
+
+        }
+        table {
+            font-family: Futura, sans-serif;
+            color: #1d3e6b ;
+        }
+    </style>
+</head>
+<body style = "background-color:rgb(120,169,234)">
+<ul class="nav">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><form th:action="@{/logout}" method="post">
+        <input type="submit" class="button" style="color:#ccece6; font-family: Futura, sans-serif" value="Log Out"/>
+    </form></li>
+</ul>
+
+<br>
+<div>
+    <table style="background: #ccdae9; width:100%">
+        <tr>
+            <th>Question</th>
+            <th>Answers/Stats</th>
+        </tr>
+        <tr data-th-each="question : ${questionList}">
+            <td data-th-text="${question.getText()}">Jill</td>
+            <td>
+                <div data-th-each="answer : ${question.getAnswers()}">
+                    <a data-th-text="${answer.getText()}"></a></br>
+                    <a>Answered:</a>
+                    <div data-th-each="users : ${answer.getUsers()}" >
+                        <a data-th-text="${users.getFirstname()}"></a></br>
+                    </div>
+                    </br></br></br>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<div style="margin-left: 45%">
+    <a href="/voteform", class="button1">Start voting</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example </title>
+    <style>
+        body {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/001/234/728/original/vote-lettering-with-young-woman-and-marker-pen-vector.jpg');
+            font-family: Arial, sans-serif;
+            background-repeat: no-repeat;
+            background-size: 60%;
+            margin-left: 600px;
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=password], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: rgb(0,21,94);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #5e3caf;
+        }
+
+        .formLogin {
+            border-radius: 5px;
+            background-color: rgb(78,91,202);
+            padding: 20px;
+            margin-left: 330px;
+            margin-top: 180px;
+            width: 200px;
+            height: 220px;
+            position: absolute;
+            opacity: 70%
+        }
+    </style>
+</head>
+<body>
+
+<div class="formLogin">
+    <div th:if="${param.error}">
+        Invalid username and password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+    <form th:action="@{/login}" method="post">
+        <div><input type="text" name="username" placeholder="Email"/> </div>
+        <div><input type="password" name="password" placeholder="Password"/> </div>
+        <div><input type="submit" class="button" value="Go"/></div>
+    </form>
+</div>
+
+
+</body>
+</html>

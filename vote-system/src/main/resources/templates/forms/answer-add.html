@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.saatchiart.com/saatchi/117292/art/4408063/3477903-TNNQZMIK-7.jpg');
+
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=password], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: rgb(0,21,94);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #5e3caf;
+        }
+
+        .formLogin {
+            border-radius: 5px;
+            background-color: rgb(78,91,202);
+            padding: 20px;
+            margin-left: 520px;
+            margin-top: 30px;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            opacity: 70%
+        }
+        label{
+            color: white;
+        }
+        ul.nav {
+            margin:0;
+            padding:0;
+            list-style:none;
+            height:36px; line-height:36px;
+            background: rgb(29, 62, 107); /* you can change the backgorund color here. */
+            font-family:Futura;
+            font-size:13px;
+        }
+        ul.nav li {
+            float:left;
+        }
+        ul.nav a {
+            display:block;
+            padding:0 28px;
+            color:#ccece6;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/questionsanswers">Create questionary</a></li>
+    <li><a href="/users">Manage users</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/questionadd">Add question</a></li>
+    <li><a href="/answerassignform">Add answer to question</a></li>
+    <li><a href="/answers">Available answers</a></li>
+</ul>
+<form action="/answercreate" class="formLogin">
+    <label for="text">Create answer:</label><br>
+    <input type="text" id="text" name="text"><br>
+
+
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>

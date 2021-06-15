@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile edit</title>
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        .bg {
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 60%;
+        }
+
+
+
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=password], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: rgb(0,21,94);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #5e3caf;
+        }
+
+        .formLogin {
+            border-radius: 5px;
+            background-color: rgb(78,91,202);
+            padding: 20px;
+            margin-left: 520px;
+            margin-top: 30px;
+            width: 200px;
+            height: 500px;
+            position: absolute;
+            opacity: 70%
+        }
+        label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div style="background-image: url('https://i.pinimg.com/originals/a9/ec/fb/a9ecfbd50e548b9cee447a40b4ea3d21.jpg')" class="bg"></div>
+<h2 style="color: rgb(0,21,94); text-align: center">Change your info:</h2>
+<form action="/userupdate" class="formLogin">
+    <label for="firstname">First name:</label><br>
+    <input type="text" id="firstname" name="firstname"><br>
+
+    <label for="lastname">Last name:</label><br>
+    <input type="text" id="lastname" name="lastname"><br>
+
+    <label for="groupname">Group name:</label><br>
+    <input type="text" id="groupname" name="groupname"><br>
+
+    <label for="age">Age:</label><br>
+    <input type="text" id="age" name="age"><br>
+
+    <label for="interests">Interests:</label><br>
+    <input type="text" id="interests" name="interests"><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

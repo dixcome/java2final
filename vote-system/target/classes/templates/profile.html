@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul.nav {
+            margin:0;
+            padding:0;
+            list-style:none;
+            height:36px; line-height:36px;
+            background: rgb(29, 62, 107); /* you can change the backgorund color here. */
+            font-family:Futura;
+            font-size:13px;
+        }
+        ul.nav li {
+            float:left;
+        }
+        ul.nav a {
+            display:block;
+            padding:0 28px;
+            color:#ccece6;
+            text-decoration:none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #94BDEA;
+            color:  #1d3e6b;
+
+            font-family:Futura;
+        }
+
+        .button {
+            background-color: #1d3e6b; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family:Futura, sans-serif;
+            font-size:13px;
+
+        }
+
+        .button1 {
+            background-color: #1d3e6b; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family:Futura, sans-serif;
+            font-size:13px;
+            padding: 10px 25px;
+
+        }
+        table {
+            font-family: Futura, sans-serif;
+            color: #1d3e6b ;
+        }
+    </style>
+</head>
+<body>
+
+<body style = "background-color:rgb(120,169,234)">
+<ul class="nav">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><a href="/admin">&nbsp;</a></li>
+    <li><form th:action="@{/logout}" method="post">
+        <input type="submit" class="button" value="Sign Out"/>
+    </form></li>
+</ul>
+
+</br>
+
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Age</th>
+        <th>Group name</th>
+        <th>Interests</th>
+    </tr>
+    <tr>
+        <td><a th:text="${user.getFirstname()}"></a></td>
+        <td><a th:text="${user.getLastname()}"></a></td>
+        <td><a th:text="${user.getAge()}"></a></td>
+        <td><a th:text="${user.getGroupName()}"></a></td>
+        <td><a th:text="${user.getInterests()}"></a></td>
+    </tr>
+</table>
+<br>
+<br>
+
+<div style="margin-left: 45%">
+    <a href="/useredit" class="button1">Update</a>
+</div>
+
+
+
+
+</body>
+</html>
